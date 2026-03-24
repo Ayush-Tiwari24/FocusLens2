@@ -71,24 +71,30 @@ function enterApp(u){
   appScreen.classList.remove('hidden');
   hideAppAlert();
   // Update user chip
-  if(u){
-    userChip.classList.remove('hidden');
-    uName.textContent = u.displayName || u.email || 'User';
-    if(u.photoURL){ uAvatar.src=u.photoURL; uAvatar.style.display='block'; }
-    else uAvatar.style.display='none';
-  } else {
-    userChip.classList.add('hidden');
+  if(userChip){
+    if(u){
+      userChip.classList.remove('hidden');
+      if(uName) uName.textContent = u.displayName || u.email || 'User';
+      if(uAvatar){
+        if(u.photoURL){ uAvatar.src=u.photoURL; uAvatar.style.display='block'; }
+        else uAvatar.style.display='none';
+      }
+    } else {
+      userChip.classList.add('hidden');
+    }
   }
   renderHist();
   if(u) toast(`Welcome, ${u.displayName || u.email}!`);
 }
 
 // Sign out button — delegates to Clerk via window.FL_USER.signOut()
-btnOut.addEventListener('click', async () => {
-  if(window.FL_USER && typeof window.FL_USER.signOut === 'function'){
-    await window.FL_USER.signOut();
-  }
-});
+if(btnOut){
+  btnOut.addEventListener('click', async () => {
+    if(window.FL_USER && typeof window.FL_USER.signOut === 'function'){
+      await window.FL_USER.signOut();
+    }
+  });
+}
 
 // ── BOOT ───────────────────────────────────────────────────────────────────────
 async function boot(){

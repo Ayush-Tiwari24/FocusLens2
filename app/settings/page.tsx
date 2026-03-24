@@ -65,7 +65,7 @@ export default function SettingsPage() {
         onClick={() => update(id, !settings[id])}
         style={{
           width: 44, height: 24, borderRadius: 12, border: 'none', cursor: 'pointer',
-          background: settings[id] ? 'var(--neon)' : 'rgba(255,255,255,0.08)',
+          background: settings[id] ? 'var(--neon)' : 'var(--panel3)',
           position: 'relative', transition: 'all 0.25s', flexShrink: 0,
           boxShadow: settings[id] ? '0 0 10px rgba(57,255,156,0.35)' : 'none',
         }}
@@ -109,7 +109,7 @@ export default function SettingsPage() {
   )
 
   const Section = ({ title, icon, children }: { title: string; icon: string; children: React.ReactNode }) => (
-    <div style={{ background: 'linear-gradient(135deg, rgba(14,17,32,0.95), rgba(19,22,40,0.9))', border: '1px solid rgba(124,58,255,0.12)', borderRadius: 20, padding: 24, marginBottom: 16, position: 'relative', overflow: 'hidden' }}>
+    <div style={{ background: 'linear-gradient(135deg, var(--panel), var(--panel2))', border: '1px solid var(--border)', borderRadius: 20, padding: 24, marginBottom: 16, position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: 'linear-gradient(90deg,transparent,rgba(124,58,255,0.3),rgba(57,255,156,0.15),transparent)' }} />
       <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
         <div style={{ width: 34, height: 34, borderRadius: 9, background: 'rgba(124,58,255,0.12)', border: '1px solid rgba(124,58,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16 }}>{icon}</div>

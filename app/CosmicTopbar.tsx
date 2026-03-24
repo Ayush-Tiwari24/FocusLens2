@@ -297,12 +297,6 @@ export default function CosmicTopbar() {
             )}
           </div>
 
-          {/* Legacy hidden chip for fl-app.js */}
-          <div id="userChip" className="hidden">
-            <img id="uAvatar" src="" alt="" style={{ display: 'none' }} />
-            <span id="uName"></span>
-            <button id="btnOut">↩</button>
-          </div>
         </div>
       </div>
     </>

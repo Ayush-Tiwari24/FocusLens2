@@ -46,7 +46,7 @@ export default function FocusApp() {
   const [credits, setCredits] = useState(0)
   const [quote, setQuote] = useState(DAILY_QUOTES[0])
   const [quoteVisible, setQuoteVisible] = useState(true)
-  const quoteInterval = useRef<NodeJS.Timeout>()
+  const quoteInterval = useRef<NodeJS.Timeout | undefined>(undefined)
 
   // Rotate quotes
   const rotateQuote = useCallback(() => {
