@@ -34,8 +34,13 @@ export default function Home() {
       raf.current = requestAnimationFrame(animate)
     }
     raf.current = requestAnimationFrame(animate)
-    return () => { window.removeEventListener('mousemove', handleMouse); if (raf.current) cancelAnimationFrame(raf.current) }
-  }, [])
+ return () => {
+    window.removeEventListener('mousemove', handleMouse) // Add this line
+    if (raf.current !== null) {
+      cancelAnimationFrame(raf.current)
+    }
+  }
+}, [])
 
   return (
     <>
