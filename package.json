@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.0.0",
+<<<<<<< HEAD
     "@neondatabase/serverless": "^1.0.2",
+=======
+>>>>>>> a6b1654afa8705b464efbfd20b0b524ab310478c
     "next": "^15.2.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -19,8 +22,14 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+<<<<<<< HEAD
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
     "typescript": "^5"
+=======
+    "typescript": "^5",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.4"
+>>>>>>> a6b1654afa8705b464efbfd20b0b524ab310478c
   }
 }

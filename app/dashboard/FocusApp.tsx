@@ -67,6 +67,7 @@ export default function FocusApp() {
     return () => clearInterval(quoteInterval.current)
   }, [rotateQuote])
 
+<<<<<<< HEAD
   // Load credits from DB on mount
 useEffect(() => {
   fetch('/api/credits')
@@ -87,6 +88,17 @@ useEffect(() => {
       body: JSON.stringify({ credits: val, reason: 'Focus session +5' })
     })
   }
+=======
+  // Listen for credit updates from fl-app.js (which dispatches fl_credits_changed)
+  useEffect(() => {
+    const stored = localStorage.getItem('fl_credits')
+    if (stored) setCredits(parseInt(stored, 10))
+
+    const onCredit = () => {
+      const val = parseInt(localStorage.getItem('fl_credits') || '0', 10)
+      setCredits(val)
+    }
+>>>>>>> a6b1654afa8705b464efbfd20b0b524ab310478c
     window.addEventListener('fl_credits_changed', onCredit)
     window.addEventListener('storage', onCredit)
     return () => {

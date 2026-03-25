@@ -10,6 +10,9 @@ npm-debug.log*
 *.tsbuildinfo
 next-env.d.ts
 .vercel
+<<<<<<< HEAD
 
 # clerk configuration (can include secrets)
 /.clerk/
+=======
+>>>>>>> a6b1654afa8705b464efbfd20b0b524ab310478c
