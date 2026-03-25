@@ -67,11 +67,6 @@ focuslens-clerk/
         └── page.tsx
 ```
 
-## Deploy to Vercel
-```bash
-npx vercel
-```
-Add env vars in Vercel → Project → Settings → Environment Variables.
 #   f o c u s l e n s 
  
  #   f o c u s l e n s 
